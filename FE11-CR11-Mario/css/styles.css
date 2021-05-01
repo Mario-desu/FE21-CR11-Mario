@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+   
+}
+
+
+body {
+   
+    background: url("../pictures/animal_bg-min.jpg");
+    background-size: cover;
+    /* so that the footer stays on the bottom */
+
+    
+    min-height: 100vh;
+}
+
+/* body .container {
+
+        height: 100%;
+
+} */
+
+h2, .h2 {
+    text-shadow: 1px 1px 4px black;
+}
+
+
+fieldset {
+    background: whitesmoke;
+    padding: 2rem;
+}
+
+
+
+
+/*table styling*/
+
+.shadow-css {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.manageProduct {           
+    margin: auto;
+}
+
+.img-thumbnail {
+    /* width: 70px !important; */
+    height: 70px !important;
+}
+
+.table-style {
+    background-color: #d6cfc7;
+    opacity: 0.9;
+}
+
+td {          
+    text-align: center;
+    vertical-align: middle;
+}
+tr {
+    text-align: center;
+    
+}
+
+a {text-decoration: none;}
+
+/*Navbar*/
+
+.nav-style {
+
+  background-color: #dfd8a4
+}
+
+/*change font-size navbar*/
+
+.nav-style a {
+    font-size: 1.8em;
+}
+
+
+
+footer {
+    background-color: #ddd5b2;
+    margin-bottom: 0px;
+}

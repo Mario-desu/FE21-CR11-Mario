@@ -35,7 +35,7 @@ if ($_POST) {
             <td> $name </td>
             <td> $location </td>
             <td> $breed </td>
-            <td> $age </td>
+            <td> $age years</td>
             </tr></table><hr>";
         $uploadError = ($image->error !=0)? $image->ErrorMessage :'';
     } else {
@@ -55,17 +55,22 @@ if ($_POST) {
         <meta charset="UTF-8">
         <title>CR1 Mario</title>
         <?php require_once '../../components/boot.php'?>
+        <link rel="stylesheet" href="../../css/styles.css">
     </head>
     <body>
+            <!--Navbar-component-->
+    <?php include_once "../../components/navbar3.php";?>
         <div class="container">
             <div class="mt-3 mb-3">
                 <h1>Create request response</h1>
             </div>
-            <div class="alert alert-<?=$class;?>" role="alert">
+            <div class="alert alert-<?=$class;?> shadow-css rounded" role="alert">
                 <p><?php echo ($message) ?? ''; ?></p>
                 <p><?php echo ($uploadError) ?? ''; ?></p>
-                <a href='../index.php'><button class="btn btn-primary" type='button'>Home</button></a>
+                <a href='../admin_panel.php'><button class="btn btn-primary" type='button'>Home</button></a>
             </div>
         </div>
+        <!--Footer-component-->
+        <?php include_once "../../components/footer.php";?>
     </body>
 </html>

@@ -41,6 +41,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR11 Mario</title>
         <?php require_once '../components/boot.php'?>
+        <link rel="stylesheet" href="../css/styles.css">
         <style type="text/css">
             .manageProduct {           
                 margin: auto;
@@ -50,7 +51,7 @@ $connect->close();
                 height: 70px !important;
             }
             td {          
-                text-align: left;
+                text-align: center;
                 vertical-align: middle;
             }
             tr {
@@ -59,10 +60,15 @@ $connect->close();
         </style>
     </head>
     <body>
+                    <!--Navbar-component-->
+    <?php include_once "../components/navbar2.php";?>
         <div class="manageProduct w-75 mt-3">    
-            <p class='h2'>All Animals</p>
-            <table class='table table-striped'>
-                <thead class='table-success'>
+            <p class='h2'>Only Seniors</p>
+            <a href='home.php'><button class='btn btn-info btn-sm' type='button'>All pets</button></a>
+            <a href='available.php'><button class='btn btn-info btn-sm' type='button'>Available Pets</button></a></p>
+            <p><a href='admin_panel.php'>Administration</a></p>
+            <table class='table table-striped shadow-css'>
+                <thead class='table-style'>
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
@@ -71,11 +77,13 @@ $connect->close();
                         <th>Age</th>
                         <th></th>
                     </tr>
-                </thead>
-                <tbody>
+                </thead class='table-style'>
+                <tbody class='bg-light'>
                     <?= $tbody;?>
                 </tbody>
             </table>
         </div>
+        <!--Footer-component-->
+        <?php include_once "../components/footer.php";?>
     </body>
 </html>

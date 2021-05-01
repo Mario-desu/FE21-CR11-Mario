@@ -12,7 +12,7 @@ require_once '../components/db_connect.php';
      exit;
  }
 
-$sql = "SELECT * FROM animals";
+$sql = "SELECT * FROM animals WHERE status = 'available'";
 $result = mysqli_query($connect ,$sql);
 $tbody=''; //this variable will hold the body for the table
 if(mysqli_num_rows($result)  > 0) {     
@@ -63,9 +63,9 @@ $connect->close();
             <!--Navbar-component-->
     <?php include_once "../components/navbar2.php";?>
         <div class="manageProduct w-75 mt-3">    
-            <p class='h2'>All Pets</p>
-            <a href='senior.php'><button class='btn btn-info btn-sm' type='button'>Senior special</button></a>
-            <a href='available.php'><button class='btn btn-info btn-sm' type='button'>Available Pets</button></a></p>
+            <p class='h2'>Available Pets</p>
+            <a href='home.php'><button class='btn btn-info btn-sm' type='button'>All pets</button></a>
+            <a href='senior.php'><button class='btn btn-info btn-sm' type='button'>Senior special</button></a></p>
             <p><a href='admin_panel.php'>Administration</a></p>
             <table class='table table-striped shadow-css'>
                 <thead class='table-style'>

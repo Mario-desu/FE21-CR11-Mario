@@ -95,6 +95,7 @@ $connect->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit User</title>
     <?php require_once 'components/boot.php' ?>
+    <link rel="stylesheet" href="css/styles.css">
     <style type="text/css">
         fieldset {
             margin: auto;
@@ -106,19 +107,23 @@ $connect->close();
             width: 70px !important;
             height: 70px !important;
         }
+
+
     </style>
 </head>
 
 <body>
+    <!--Navbar-component-->
+    <?php include_once "components/navbar1.php";?>
     <div class="container">
         <div class="<?php echo $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>
             <p><?php echo ($uploadError) ?? ''; ?></p>
         </div>
-        <h2>Update</h2>
+        <h2>Update <?php echo $f_name ?> <?php echo $l_name ?></h2>
         <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $data['image'] ?>' alt="<?php echo $f_name ?>">
         <form method="post" enctype="multipart/form-data">
-            <table class="table">
+            <table class="table bg-light shadow-css rounded">
                 <tr>
                     <th>First Name</th>
                     <td><input class="form-control" type="text" name="f_name" placeholder="First Name" value="<?php echo $f_name ?>" /></td>
@@ -151,6 +156,8 @@ $connect->close();
             </table>
         </form>
     </div>
+    <!--Footer-component-->
+    <?php include_once "components/footer.php";?>
 </body>
 
 </html>

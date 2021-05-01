@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// if (isset($_SESSION[ 'user']) != "") {
+// if (isset($_SESSION[ '']) != "") {
 //    header("Location: ../../home.php");
 //    exit;
 // }
@@ -18,13 +18,20 @@ require_once '../../components/db_connect.php' ;
 
 
 if ($_POST['animalId']) {
+
+    if (isset($_SESSION['user'])) {
+        $uid = $_SESSION['user'];
+     } else {
+         $uid = $_SESSION['adm'];
+     }
     $id = $_POST['animalId'];
-    $uid = $_SESSION['adm'];
+    $status = 'adopted';
+    
     // echo $uid;
     // var_dump($_SESSION);
-    $sql = "INSERT INTO petadoption (fk_animalId, fk_userId) VALUES ($id, $uid)";
+    $sql = "INSERT INTO petadoption (fk_animalId, fk_userId, status) VALUES ($id, $uid, $status )";
     $adopt_create = mysqli_query($connect, $sql);
-    echo $adopt_create;
+    // echo $adopt_create;
     $adopting = mysqli_query($connect ,"SELECT  animals.anImage, animals.anName, animals.anLocation, animals.anAge FROM petadoption JOIN animals ON fk_animalId = animals.animalId");
     // echo $adopting;
     $abody=''; // variable for the table
@@ -54,13 +61,17 @@ if ($_POST['animalId']) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once '../../components/boot.php'?>
+    <link rel="stylesheet" href="../../css/styles.css">
     <title>CR11 Mario</title>
 </head>
 <body>
+    <!--Navbar-component-->
+    <?php include_once "../../components/navbar3.php";?>
     <div class="container">
-    <a href='../booking_dash.php'><button class='btn btn-success btn-sm' type='button'>Back to DashBoard</button></a> 
-    <table class='table table-striped'>
-        <thead class='table-success'>
+    <p class='h2'>All adopted Pets</p>
+    <a href='../home.php'><button class='btn btn-success btn-sm' type='button'>Back to DashBoard</button></a><br><br> 
+    <table class='table table-striped shadow-css'>
+        <thead class='table-style'>
             <tr>
                 <th>Image</th>
                 <th>Name</th>
@@ -68,10 +79,12 @@ if ($_POST['animalId']) {
                 <th>Age</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class='bg-light'>
             <?php echo $abody;?>
         </tbody>
     </table>
     </div>
+    <!--Footer-component-->
+    <?php include_once "../../components/footer.php";?>
 </body>
 </html>

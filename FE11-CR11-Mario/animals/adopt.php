@@ -55,6 +55,7 @@ if ($_GET['id']) {
     <head>
         <title>CR11 Mario</title>
         <?php require_once '../components/boot.php'?>
+        <link rel="stylesheet" href="../css/styles.css">
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -68,10 +69,16 @@ if ($_GET['id']) {
         </style>
     </head>
     <body>
-        <fieldset>
-            <legend class='h2'>Adopt an Animal<img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $image ?>' alt="<?php echo $name ?>"></legend>
+                    <!--Navbar-component-->
+    <?php include_once "../components/navbar2.php";?>
+        <fieldset class="shadow-css rounded">
+            <legend class='h2'>Adopt <?php echo $name ?></legend>
             <form action="actions/a_adopt.php"  method="post" enctype="multipart/form-data">
                 <table class="table">
+                    <tr>
+                        <th><img class='img-fluid' src='../pictures/<?php echo $image ?>' alt="<?php echo $name ?>"></th>
+                        <td></td>
+                    </tr>                
                     <tr>
                         <th>Name</th>
                         <td><?php echo $name ?></td>
@@ -111,5 +118,7 @@ if ($_GET['id']) {
                 </table>
             </form>
         </fieldset>
+        <!--Footer-component-->
+        <?php include_once "../components/footer.php";?>
     </body>
 </html>

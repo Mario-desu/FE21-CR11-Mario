@@ -74,10 +74,13 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login & Registration System</title>
         <?php require_once 'components/boot.php'?>
-    </head>
+        <link rel="stylesheet" href="css/styles.css">
+ 
     <body>
+        <!--Navbar-component-->
+    <?php include_once "components/navbar1.php";?>
         <div class="container">
-            <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+            <form class="w-75 shadow-css rounded bg-light p-3 mt-5" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
                 <h2>LogIn</h2>
                 <hr/>
                 <?php
@@ -89,7 +92,7 @@ $connect->close();
                 <input type="email" autocomplete="off" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>"  maxlength="40" />
                 <span class="text-danger"><?php echo $emailError; ?></span>
 
-                <input type="password" name="pass"  class="form-control" placeholder="Your Password" maxlength="15"  />
+                <input type="password" name="pass"  class="form-control mt-2" placeholder="Your Password" maxlength="15"  />
                 <span class="text-danger"><?php echo $passError; ?></span>
                 <hr/>
                 <button button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
@@ -97,5 +100,7 @@ $connect->close();
                 <a href="register.php">Not registered yet? Click here</a>
             </form>
         </div>
+        <!--Footer-component-->
+        <?php include_once "components/footer.php";?>
     </body>
 </html>

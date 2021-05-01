@@ -4,7 +4,7 @@ function file_upload($image, $source = 'user') {
     $result->fileName = 'avatar.png';
     if(isset($_SESSION['adm'])){
 
-        $result->fileName = 'product.png';  
+        $result->fileName = 'animal.png';  
 
     }
     $result->error = 1;//it could also be a boolean true/false

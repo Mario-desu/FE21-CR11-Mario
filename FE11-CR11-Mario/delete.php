@@ -52,6 +52,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Delete User</title>
         <?php require_once 'components/boot.php'?>
+        <link rel="stylesheet" href="css/styles.css">
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -65,10 +66,12 @@ $connect->close();
         </style>
     </head>
     <body>
+                   <!--Navbar-component-->
+        <?php include_once "components/navbar1.php";?>
         <div class="<?php echo $class; ?>" role="alert">
             <p><?php echo ($message) ?? ''; ?></p>           
         </div>
-        <fieldset>
+        <fieldset class="shadow-css rounded">
             <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='pictures/<?php echo $image ?>' alt="<?php echo $f_name ?>"></legend>
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
@@ -86,5 +89,7 @@ $connect->close();
                 <a href="dashboard.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
             </form>
         </fieldset>
+     <!--Footer-component-->
+    <?php include_once "components/footer.php";?>
     </body>
 </html>

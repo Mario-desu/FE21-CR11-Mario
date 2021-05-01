@@ -27,6 +27,7 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Welcome - <?php echo $row['f_name']; ?></title>
         <?php require_once 'components/boot.php'?>
+        <link rel="stylesheet" href="css/styles.css">
         <style>
             .userImage{
                 width: 200px;
@@ -39,13 +40,17 @@ $connect->close();
         </style>
     </head>
     <body>
+                   <!--Navbar-component-->
+    <?php include_once "components/navbar1.php";?>
         <div class="container">
-            <div class="hero">
+            <div class="hero shadow-css rounded bg-light p-3 mt-5">
                 <img class="userImage" src="pictures/<?php echo $row['image']; ?>" alt="<?php echo $row['f_name']; ?>">
                 <p class="text-white" >Hi <?php echo $row['f_name']; ?></p>
             </div>
-            <a href="logout.php?logout">Sign Out</a>
+            <a href="logout.php?logout">Sign Out</a><br>
             <a href="update.php?id=<?php echo $_SESSION['user'] ?>">Update your profile</a>
         </div>
+    <!--Footer-component-->
+    <?php include_once "components/footer.php";?>
     </body>
 </html>

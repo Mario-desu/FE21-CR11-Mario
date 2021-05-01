@@ -47,13 +47,14 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Adm-DashBoard</title>
         <?php require_once 'components/boot.php'?>
+        <link rel="stylesheet" href="css/styles.css">
         <style type="text/css">        
             .img-thumbnail{
                 width: 70px !important;
                 height: 70px !important;
             }
             td{
-                text-align: left;
+                text-align: center;
                 vertical-align: middle;
             }
             tr{
@@ -63,36 +64,45 @@ $connect->close();
                 width: 100px;
                 height: auto;
             }
+
+            .container {
+                height: 100vh;
+            }
+
         </style>
     </head>
     <body>
+            <!--Navbar-component-->
+    <?php include_once "components/navbar1.php";?>
         <div class="container">
             <div class="row">
                 <div class="col-2">
                     <img class="userImage img-fluid" src="pictures/admavatar.png" alt="Adm avatar">
                     <p class="">Administrator</p>
 
-                    <a href="animals/index.php">Animals</a><br>
+                    <a href="animals/admin_panel.php">Animals</a><br>
                     <a href="logout.php?logout">Sign Out</a>
                 </div>
                 <div class="col-8 mt-2 ms-4">
                     <p class='h2'>Users</p>
-                    <table class='table table-striped'>
-                        <thead class='table-success'>
+                    <table class='table table-striped shadow-css'>
+                        <thead class='table-style'>
                             <tr>
-                                <th>image</th>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Date of birth</th>
                                 <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class='bg-light'>
                             <?=$tbody?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+    <!--Footer-component-->
+    <?php include_once "components/footer.php";?>
     </body>
 </html>

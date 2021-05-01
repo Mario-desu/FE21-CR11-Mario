@@ -23,6 +23,7 @@ if(mysqli_num_rows($result)  > 0) {
             <td>" .$row['anLocation']."</td>
             <td>" .$row['breed']."</td>
             <td>" .$row['anAge']."</td>
+            <td>" .$row['status']."</td>
             <td><a href='update.php?id=" .$row['animalId']."'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
             <a href='delete.php?id=" .$row['animalId']."'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
             </tr>";
@@ -42,7 +43,8 @@ $connect->close();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR11 Mario</title>
         <?php require_once '../components/boot.php'?>
-        <style type="text/css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <!-- <style type="text/css">
             .manageProduct {           
                 margin: auto;
             }
@@ -57,29 +59,34 @@ $connect->close();
             tr {
                 text-align: center;
             }
-        </style>
+        </style> -->
     </head>
     <body>
+                    <!--Navbar-component-->
+    <?php include_once "../components/navbar2.php";?>
         <div class="manageProduct w-75 mt-3">    
             <div class='mb-3'>
                 <a href= "create.php"><button class='btn btn-primary'type="button" >Add Animal</button></a>
             </div>
             <p class='h2'>Animals</p>
-            <table class='table table-striped'>
-                <thead class='table-success'>
+            <table class='table table-striped shadow-css'>
+                <thead class='table-style'>
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
                         <th>Location</th>
                         <th>Breed</th>
                         <th>Age</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-light">
                     <?= $tbody;?>
                 </tbody>
             </table>
         </div>
+        <!--Footer-component-->
+        <?php include_once "../components/footer.php";?>
     </body>
 </html>

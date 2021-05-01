@@ -29,6 +29,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)){
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php require_once '../components/boot.php'?>
+        <link rel="stylesheet" href="../css/styles.css">
         <title>CR11_Mario</title>
         <style>
             fieldset {
@@ -39,7 +40,9 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)){
         </style>
     </head>
     <body>
-        <fieldset>
+                    <!--Navbar-component-->
+    <?php include_once "../components/navbar2.php";?>
+        <fieldset class="shadow-css rounded">
             <legend class='h2'>Add Animal</legend>
             <form action="actions/a_create.php" method= "post" enctype="multipart/form-data">
                 <table class='table'>
@@ -81,10 +84,12 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)){
                     </tr>
                     <tr>
                         <td><button class='btn btn-success' type="submit">Add Animal</button></td>
-                        <td><a href="index.php"><button class='btn btn-warning' type="button">Home</button></a></td>
+                        <td><a href="admin_panel.php"><button class='btn btn-warning' type="button">Home</button></a></td>
                     </tr>
                 </table>
             </form>
         </fieldset>
+        <!--Footer-component-->
+        <?php include_once "../components/footer.php";?>
     </body>
 </html>

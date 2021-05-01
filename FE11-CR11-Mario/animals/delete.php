@@ -44,6 +44,7 @@ if ($_GET['id']) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR11 Mario</title>
         <?php require_once '../components/boot.php'?>
+        <link rel="stylesheet" href="../css/styles.css">
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -57,7 +58,9 @@ if ($_GET['id']) {
         </style>
     </head>
     <body>
-        <fieldset>
+                    <!--Navbar-component-->
+    <?php include_once "../components/navbar2.php";?>
+        <fieldset class="shadow-css rounded">
             <legend class='h2 mb-3'>Delete request <img class='img-thumbnail rounded-circle' src='../pictures/<?php echo $image ?>' alt="<?php echo $name ?>"></legend>
             <h5>You have selected the data below:</h5>
             <table class="table w-75 mt-3">
@@ -72,8 +75,10 @@ if ($_GET['id']) {
                 <input type="hidden" name="id" value="<?php echo $id ?>" />
                 <input type="hidden" name="image" value="<?php echo $image ?>" />
                 <button class="btn btn-danger" type="submit">Yes, delete it!</button>
-                <a href="index.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
+                <a href="admin_panel.php"><button class="btn btn-warning" type="button">No, go back!</button></a>
             </form>
         </fieldset>
+        <!--Footer-component-->
+        <?php include_once "../components/footer.php";?>
     </body>
 </html>
