@@ -12,7 +12,10 @@ if (isset($_SESSION["user"])) {
     exit;
 }
 
+
+
 $id = $_SESSION['adm'];
+
 
 $status = 'adm';
 $sqlSelect = "SELECT * FROM user WHERE status != ? ";
@@ -66,6 +69,12 @@ $connect->close();
                 height: auto;
             }
 
+            /*img will be hidden when screen smaller*/
+            @media screen and (max-width:992px) { 
+                .img-thumbnail {visibility:hidden;}
+            
+            
+             }
         </style>
     </head>
     <body>
@@ -85,7 +94,7 @@ $connect->close();
                     <table class='table table-striped shadow-css'>
                         <thead class='table-style'>
                             <tr>
-                                <th></th>
+                                <th class="img-user"></th>
                                 <th>Name</th>
                                 <th>Date of birth</th>
                                 <th>Email</th>

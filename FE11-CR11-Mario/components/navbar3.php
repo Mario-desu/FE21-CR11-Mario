@@ -1,3 +1,17 @@
+<?php
+
+$dash = "";
+
+if (isset($_SESSION['adm'])) {
+    $dash = "Dashboard";
+}
+if (isset($_SESSION['user'])) {
+  $dash = "Login";
+}
+
+?>
+
+
 <nav class="navbar navbar-expand-lg navbar-light nav-style mb-5" id="navi">
             <!--nav-style: selector for css-->
             <div class="container-fluid">
@@ -23,7 +37,7 @@
                     <a class="nav-link text-white" href="../../animals/senior.php">Seniors</a>
                   </li>
                   <li class="nav-item pe-2">
-                    <a class="nav-link text-white" href="../../index.php">Login</a>
+                    <a class="nav-link text-white" href="../../index.php"><?php echo $dash; ?></a>
                   </li>
                   <li class="nav-item pe-2">
                     <a class="nav-link text-white" href="../../logout.php?logout">Logout</a>
