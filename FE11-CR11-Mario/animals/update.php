@@ -56,8 +56,9 @@ if ($_GET['id']) {
 <html>
     <head>
         <title>CR11 Mario</title>
-        <?php require_once '../components/boot.php'?>
-        <link rel="stylesheet" href="../css/styles.css">
+        <?php require_once '../components/bootcss.php'?>
+                <!--This will force the CSS to reload.-->
+                <link rel="stylesheet" href="../css/styles.css?v=<?php echo time(); ?>">
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -133,5 +134,7 @@ if ($_GET['id']) {
         </fieldset>
         <!--Footer-component-->
         <?php include_once "../components/footer.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "../components/boot_js.php";?>
     </body>
 </html>

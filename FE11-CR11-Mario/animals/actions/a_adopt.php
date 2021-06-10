@@ -60,8 +60,9 @@ if ($_POST['animalId']) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php require_once '../../components/boot.php'?>
-    <link rel="stylesheet" href="../../css/styles.css">
+    <?php require_once '../../components/bootcss.php'?>
+    <!--This will force the CSS to reload.-->
+    <link rel="stylesheet" href="../../css/styles.css?v=<?php echo time(); ?>">
     <title>CR11 Mario</title>
 </head>
 <body>
@@ -85,6 +86,8 @@ if ($_POST['animalId']) {
     </table>
     </div>
     <!--Footer-component-->
-    <?php include_once "../../components/footer.php";?>
+    <?php include_once "../../components/footer_sticky.php";?>
+    <!--Bootstrap-JS-component-->
+    <?php include_once "../../components/boot_js.php";?>
 </body>
 </html>

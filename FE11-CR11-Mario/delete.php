@@ -51,8 +51,9 @@ $connect->close();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Delete User</title>
-        <?php require_once 'components/boot.php'?>
-        <link rel="stylesheet" href="css/styles.css">
+        <?php require_once 'components/bootcss.php'?>
+        <!--This will force the CSS to reload.-->
+        <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
         <style type= "text/css">
             fieldset {
                 margin: auto;
@@ -90,6 +91,8 @@ $connect->close();
             </form>
         </fieldset>
      <!--Footer-component-->
-    <?php include_once "components/footer.php";?>
+    <?php include_once "components/footer_sticky.php";?>
+    <!--Bootstrap-JS-component-->
+    <?php include_once "components/boot_js.php";?>
     </body>
 </html>

@@ -11,17 +11,11 @@ body {
    
     background: url("../pictures/animal_bg-min.jpg");
     background-size: cover;
-    /* so that the footer stays on the bottom */
 
-    
-    min-height: 100vh;
-}
 
-/* body .container {
 
-        height: 100%;
 
-} */
+} 
 
 h2, .h2 {
     text-shadow: 1px 1px 4px black;
@@ -83,6 +77,13 @@ a {text-decoration: none;}
 
 
 footer {
-    background-color: #ddd5b2;
-    margin-bottom: 0px;
+    background-color: #d4ba45;
+
+}
+
+.stickyFooter {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
 }

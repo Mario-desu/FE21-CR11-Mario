@@ -40,14 +40,15 @@ $connect->close();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CR11 Mario</title>
-        <?php require_once '../components/boot.php'?>
-        <link rel="stylesheet" href="../css/styles.css">
+        <?php require_once '../components/bootcss.php'?>
+        <!--This will force the CSS to reload.-->
+        <link rel="stylesheet" href="../css/styles.css?v=<?php echo time(); ?>">
         <style type="text/css">
             .manageProduct {           
                 margin: auto;
             }
             .img-thumbnail {
-                width: 70px !important;
+
                 height: 70px !important;
             }
             td {          
@@ -84,6 +85,8 @@ $connect->close();
             </table>
         </div>
         <!--Footer-component-->
-        <?php include_once "../components/footer.php";?>
+        <?php include_once "../components/footer_sticky.php";?>
+        <!--Bootstrap-JS-component-->
+        <?php include_once "../components/boot_js.php";?>
     </body>
 </html>
